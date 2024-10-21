@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Customer{% endblock %}
+
+{% block head %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/customer.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+
+{% block content %}
+{% for customer in cust_obj %}
+    <h3>Hey,{{ customer.name }}</h3>
+<div class="card-container">
+    {% for labour_obj in labour_obj %}
+    <div class="card">
+        
+        <div class="a">
+        <img src="{{ labour_obj.image.url }}" class="cardim" alt="Profile image" />
+        <h2 class="name">{{ labour_obj.name }}</h2>
+        <p class="profession">{{ labour_obj.profession }}</p>
+        <p class="fees">{{labour_obj.fees}}</p>
+        <i class="fa-solid fa-circle-info toggle-icon"></i>
+    </div>
+
+    <div class="b hidden">
+        <p>Name : {{labour_obj.name}}</p>
+        <p>Place : {{labour_obj.place}}</p>
+        <p>Phone number : {{labour_obj.phone_number}}</p>
+        <button type="button" class="btn btn-secondary book" id="btn">Book</button> <br>
+        <i class="fa-solid fa-house arrow-icon"></i>
+    </div>
+
+    <div class="c hidden">
+        <p>Enter the date and time</p>
+        <form action="/book/{{ customer.id }}/{{ labour_obj.id }}/" method="post">
+            {% csrf_token %}
+            <input type="datetime-local" name="booking_time" required>
+            <button type="submit" class="btn btn-secondary" id="btn">Submit</button> <br>
+        </form>
+                        <i class="fa-solid fa-house-user home"></i>
+    </div>
+
+
+    </div>
+    {% endfor %}
+    {% endfor %}
+</div>
+
+<script src="{% static 'js/customer.js' %}"></script>
+
+{% endblock %}

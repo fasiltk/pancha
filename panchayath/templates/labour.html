@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Customer
+{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/labour.css' %}" />
+{% endblock %}
+
+{% block content %}
+{% if labour_obj %}
+    <h3>Hey, {{ labour_obj.name }}</h3>
+{% endif %}
+  <div class="main">
+    <table border="">
+      {% for data in data %}
+        <tr>
+          <th>Name</th> <th>Address</th> <th>Phone Number</th> <th>Date and Time</th> <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>{{ data.book.name }}</td> <td>{{ data.book.address }}</td> <td>{{ data.book.phone_number }}</td> <td>{{ data.booking_time }}</td>
+          <td><a href=""><button>Approve</button></a></td>  <td><a href=""><button>Cancel</button></a></td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,95 @@
+body {
+    display: block;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+}
+
+.card {
+    width: 200px;
+    height: 275px;
+    margin: 10px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 20px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+	border-radius: 50px;
+    margin-top: 10px;
+}
+.hidden {
+    display: none;
+  }
+  i {
+    font-size: 24px;
+    cursor: pointer;
+  }
+.h2,.p{
+    margin-left: 20px;
+}
+.name ,.profession{
+    margin-left: 20px;
+}
+.toggle-icon{
+    margin-left: 30px;
+}
+.a{
+    align-items: center;
+}
+.fees{
+    margin-left: 25px;
+}
+#btn{
+    background-color:#222D32 ;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.b{
+    margin-top: 30px;
+}
+.arrow-icon{
+    margin-left: 55px;
+    margin-top: 10px;
+}
+.c{
+    width: 200px;
+}
+.c p{
+    margin-left: 10px;
+    margin-top: 50px;
+}
+input[type="datetime-local"] {
+    width: 100%; /* Make it take full width of the container */
+    padding: 10px; /* Add padding inside the input */
+    font-size: 16px; /* Adjust the font size */
+    border: 1px solid #ccc; /* Border styling */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Set background color */
+    color: #333; /* Set text color */
+    outline: none; /* Remove default outline on focus */
+    transition: border-color 0.3s ease-in-out; /* Smooth transition on focus */
+}
+
+input[type="datetime-local"]:focus {
+    border-color: #007bff; /* Change border color when focused */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow on focus */
+}
+.home{
+    margin-top: 15px;
+    margin-left: 80px;
+}
+a{
+    margin-left: 20px;
+}
+h3{
+    color: #f9f9f9;
+}
