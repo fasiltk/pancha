@@ -189,3 +189,7 @@ def book(request, customer_id, labour_id):
 
 def lab_cart(request):
     return render(request,"lab_cart.html")
+
+
+
+#hello
